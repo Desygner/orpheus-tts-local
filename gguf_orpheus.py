@@ -12,7 +12,7 @@ import queue
 import asyncio
 
 # LM Studio API settings
-API_URL = "http://127.0.0.1:1234/v1/completions"
+API_URL = "http://192.168.68.66:1234/v1/completions"
 HEADERS = {
     "Content-Type": "application/json"
 }

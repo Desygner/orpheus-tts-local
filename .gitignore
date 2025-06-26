@@ -1,4 +1,32 @@
-__pycache__
-outputs/
+# Virtual environment
+.venv/
 venv/
+
+# PyTorch wheel files
+*.whl
+
+# Output files
+outputs/
+*.wav
+
+# Log files
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
+Thumbs.db
