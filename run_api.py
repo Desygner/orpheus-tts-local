@@ -42,7 +42,7 @@ def check_lm_studio():
     """Check if LM Studio is accessible."""
     import requests
     
-    api_url = os.getenv("LM_STUDIO_API_URL", "http://192.168.68.66:1234")
+    api_url = os.getenv("LM_STUDIO_API_URL", "http://192.168.68.95:1234")
     
     try:
         response = requests.get(f"{api_url}/v1/models", timeout=5)
@@ -64,7 +64,7 @@ def main():
     parser.add_argument("--reload", action="store_true", help="Enable auto-reload for development")
     parser.add_argument("--log-level", default="INFO", choices=["DEBUG", "INFO", "WARNING", "ERROR"], 
                        help="Log level (default: INFO)")
-    parser.add_argument("--lm-studio-url", help="LM Studio API URL (default: http://192.168.68.66:1234)")
+    parser.add_argument("--lm-studio-url", help="LM Studio API URL (default: http://192.168.68.95:1234)")
     parser.add_argument("--skip-checks", action="store_true", help="Skip dependency and LM Studio checks")
     parser.add_argument("--workers", type=int, default=1, help="Number of worker processes (default: 1)")
     

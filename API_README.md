@@ -5,6 +5,7 @@ A RESTful API service for Orpheus Text-to-Speech synthesis using LM Studio.
 ## Quick Start
 
 1. **Install dependencies:**
+
    ```bash
    source .venv/bin/activate
    pip install -r requirements.txt
@@ -13,6 +14,7 @@ A RESTful API service for Orpheus Text-to-Speech synthesis using LM Studio.
 2. **Start LM Studio** with the Orpheus model loaded
 
 3. **Start the API server:**
+
    ```bash
    python run_api.py
    ```
@@ -25,18 +27,23 @@ A RESTful API service for Orpheus Text-to-Speech synthesis using LM Studio.
 ## API Endpoints
 
 ### Health Check
+
 ```http
 GET /health
 ```
+
 Returns server status and LM Studio connection status.
 
 ### Available Voices
+
 ```http
 GET /voices
 ```
+
 Returns list of available voices and emotion tags.
 
 ### Synthesize Speech (Audio File)
+
 ```http
 POST /synthesize
 Content-Type: application/json
@@ -50,9 +57,11 @@ Content-Type: application/json
   "max_tokens": 1200
 }
 ```
+
 Returns audio file as streaming response.
 
 ### Synthesize Speech (Metadata Only)
+
 ```http
 POST /synthesize-info
 Content-Type: application/json
@@ -62,6 +71,7 @@ Content-Type: application/json
   "voice": "tara"
 }
 ```
+
 Returns synthesis metadata without audio file.
 
 ## Voice Options
@@ -72,6 +82,7 @@ Returns synthesis metadata without audio file.
 ## Emotion Tags
 
 Add emotion to speech with XML tags:
+
 - `<laugh>`, `<chuckle>`, `<sigh>`, `<cough>`
 - `<sniffle>`, `<groan>`, `<yawn>`, `<gasp>`
 
@@ -80,7 +91,8 @@ Example: `"Hello <laugh> this is funny <laugh> text"`
 ## Configuration
 
 Environment variables:
-- `LM_STUDIO_API_URL` - LM Studio API URL (default: http://192.168.68.66:1234)
+
+- `LM_STUDIO_API_URL` - LM Studio API URL (default: http://192.168.68.95:1234)
 - `HOST` - Server host (default: 0.0.0.0)
 - `PORT` - Server port (default: 8000)
 
@@ -116,6 +128,7 @@ python test_api.py --text "Custom message" --voice leo --output my_audio.wav
 ## API Documentation
 
 Once the server is running, visit:
+
 - Swagger UI: http://localhost:8000/docs
 - ReDoc: http://localhost:8000/redoc
 
@@ -164,11 +177,13 @@ with open("output.wav", "wb") as f:
 ## Troubleshooting
 
 1. **Connection refused errors:**
+
    - Ensure LM Studio is running
    - Check the API URL configuration
    - Verify the Orpheus model is loaded in LM Studio
 
 2. **Missing dependencies:**
+
    - Run `pip install -r requirements.txt`
    - Ensure virtual environment is activated
 

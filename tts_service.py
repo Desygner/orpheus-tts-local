@@ -14,7 +14,7 @@ from models import VoiceType, VoiceInfo
 class TTSService:
     """Service class for Text-to-Speech functionality using Orpheus model."""
     
-    def __init__(self, api_url: str = "http://192.168.68.66:1234/v1/completions"):
+    def __init__(self, api_url: str = "http://192.168.68.95:1234/v1/completions"):
         self.api_url = api_url
         self.headers = {"Content-Type": "application/json"}
         self.sample_rate = 24000

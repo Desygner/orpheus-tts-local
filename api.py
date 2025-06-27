@@ -25,7 +25,7 @@ async def lifespan(app: FastAPI):
     
     # Startup
     logger.info("Starting Orpheus TTS API...")
-    api_url = os.getenv("LM_STUDIO_API_URL", "http://192.168.68.66:1234/v1/completions")
+    api_url = os.getenv("LM_STUDIO_API_URL", "http://192.168.68.95:1234/v1/completions")
     tts_service = TTSService(api_url=api_url)
     logger.info(f"TTS Service initialized with LM Studio URL: {api_url}")
     

@@ -20,7 +20,7 @@ class SynthesizeRequest(BaseModel):
     temperature: float = Field(default=0.6, ge=0.1, le=2.0, description="Temperature for generation (0.1-2.0)")
     top_p: float = Field(default=0.9, ge=0.1, le=1.0, description="Top-p sampling parameter (0.1-1.0)")
     repetition_penalty: float = Field(default=1.1, ge=1.0, le=2.0, description="Repetition penalty (1.0-2.0)")
-    max_tokens: int = Field(default=1200, ge=100, le=2000, description="Maximum tokens to generate")
+    max_tokens: int = Field(default=1200, ge=100, le=5000, description="Maximum tokens to generate")
 
     @validator('text')
     def validate_text(cls, v):
